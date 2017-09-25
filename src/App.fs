@@ -36,6 +36,10 @@ let root model dispatch =
                       Button.button [ Button.isSmall ; Button.props [ OnClick (fun _ -> Decrement(1) |> dispatch) ]] [ 
                           Icon.faIcon [ ] Fa.ArrowDown
                           str "Decrement" ]
+                      Progress.progress
+                        [ Progress.isInfo
+                          Progress.value model.Count
+                          Progress.max 100 ] [ ]
                   ]
             ]
         ]
