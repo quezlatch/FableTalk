@@ -19,6 +19,7 @@ open Fable.Helpers.React.Props
 open Fulma
 open Fulma.Elements
 open Fulma.Layouts
+open Fulma.Extra.FontAwesome
 
 let root model dispatch =
     Container.container [ Container.isFluid ]
@@ -28,9 +29,13 @@ let root model dispatch =
                 div 
                   []
                   [
-                      Button.button [ Button.isSmall ; Button.props [ OnClick (fun _ -> Increment(2) |> dispatch) ]] [ str "Increment" ]
+                      Button.button [ Button.isSmall ; Button.props [ OnClick (fun _ -> Increment(2) |> dispatch) ]] [ 
+                          Icon.faIcon [ ] Fa.ArrowUp
+                          str "Increment" ]
                       div [] [ model.Count |> sprintf "Val is %A" |> str ]
-                      Button.button [ Button.isSmall ; Button.props [ OnClick (fun _ -> Decrement(1) |> dispatch) ]] [ str "Decrement" ]
+                      Button.button [ Button.isSmall ; Button.props [ OnClick (fun _ -> Decrement(1) |> dispatch) ]] [ 
+                          Icon.faIcon [ ] Fa.ArrowDown
+                          str "Decrement" ]
                   ]
             ]
         ]
