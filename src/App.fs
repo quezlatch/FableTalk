@@ -16,14 +16,24 @@ importAll "../sass/main.sass"
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
 
+open Fulma
+open Fulma.Elements
+open Fulma.Layouts
+
 let root model dispatch =
-  div 
-      []
-      [
-          button [ OnClick (fun _ -> Increment(2) |> dispatch) ] [ str "Increment" ]
-          div [] [ model.Count |> sprintf "Val is %A" |> str ]
-          button [ OnClick (fun _ -> Decrement(1) |> dispatch) ] [ str "Decrement" ]
-      ]
+    Container.container [ Container.isFluid ]
+        [ Content.content [ ]
+            [ 
+                h1 [ ] [str "Counter of wonderfulness"]
+                div 
+                  []
+                  [
+                      Button.button [ Button.isSmall ; Button.props [ OnClick (fun _ -> Increment(2) |> dispatch) ]] [ str "Increment" ]
+                      div [] [ model.Count |> sprintf "Val is %A" |> str ]
+                      Button.button [ Button.isSmall ; Button.props [ OnClick (fun _ -> Decrement(1) |> dispatch) ]] [ str "Decrement" ]
+                  ]
+            ]
+        ]
 
 open Elmish.React
 open Elmish.Debug
