@@ -2,6 +2,8 @@
 
 @manfug
 
+The commits follow each stage of the presentation
+
 # Fable.Elmish.React Template
 
 This template can be used to generate a simple web app with [Fable](http://fable.io/) and [Elmish](https://fable-elmish.github.io/).
