@@ -40,6 +40,10 @@ let root model dispatch =
                         [ Progress.isInfo
                           Progress.value model.Count
                           Progress.max 100 ] [ ]
+                      Button.button [ Button.props [ OnClick (fun _ -> TwoStepsForwardOneStepBack |> dispatch) ]] [
+                          Icon.faIcon [] Fa.StepForward
+                          str "Two steps forward one step back"
+                      ]
                   ]
             ]
         ]
