@@ -1,3 +1,7 @@
+# Source for the talk on fable I did @ manchester f# user group
+
+@manfug
+
 # Fable.Elmish.React Template
 
 This template can be used to generate a simple web app with [Fable](http://fable.io/) and [Elmish](https://fable-elmish.github.io/).
